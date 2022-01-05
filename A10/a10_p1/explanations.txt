@@ -1,0 +1,34 @@
+/* 
+    CH-230-A
+    a10_p1.cpp 
+    Hannah McDermott
+    h.mcdermott@jacobs-university.de
+*/
+
+a) Commenting out the 'using namespues std;' gave me the following errors:
+    1. unknown type name 'string'; 
+    2. use of undeclared identifier 'cout';
+    3. use of undeclared identifier 'endl';
+    4. use of undeclared identifier 'cin';
+    
+    These errors mean that I am not specifying the namespace std, which would 
+    mean I could simply type lines like 'cout << "Hello world." << endl;' and 
+    the compiler would know where to get the definitions for functions such as 
+    cout, cin, endl, and the class string . The simplest way to correct these errors is to include
+    the statement 'using namespace std;'. If this statement is not used, then 
+    this means I have to specify the namespace for every outide object, variable...
+    This means I need to use the namespace name and scope resolution operator ::
+    before the names of anything I need from std, i.e:
+    'std::cout << "Hello world." << std::endl;'
+    'std::string s;'
+    'std::cin >> s;'
+    
+b) Removing the Critter:: prefix from the method 'void Critter::setName(string& newname)' 
+gave me the following error:
+    1. use of undeclared identifier 'name'
+
+    This error is pointing out that I have not sepcified the class from which 'name'
+    is defined. The reason why I have to include the prefix Critter:: before every method
+    is because other classes may have the same properties, so the compiler needs to know 
+    in which class to look to get the right 'name' type. 
+     
